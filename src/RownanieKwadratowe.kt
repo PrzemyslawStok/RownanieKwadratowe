@@ -1,11 +1,11 @@
 class RownanieKwadratowe(val A: Double, val B: Double, val C: Double) {
-    val delta: Double;
+    val delta: Double
 
-    var x0 = 0.0;
-    var x1 = 0.0;
+    var x0 = 0.0
+    var x1 = 0.0
 
     fun obliczDelte(): Double {
-        return B * B - 4 * A * C;
+        return B * B - 4 * A * C
     }
 
     fun obliczDwaRozwiazania(){
