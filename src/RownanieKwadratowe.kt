@@ -13,12 +13,25 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
 
     fun obliczDwaRozwiazania() {
         x1 = (-b + sqrt(delta)) / (2 * a)
-        x2 = (b + sqrt(delta)) / (2 * a)
+        x2 = (-b - sqrt(delta)) / (2 * a)
     }
 
     fun obliczJednoRozwiazanie() {
         x0 = -b / (2 * a)
+    }
 
+    fun wyswietlRozwiazania(){
+        if (delta > 0) {
+            println("Mamy dwa rozwiązania:")
+            println("x1=${x1}")
+            println("x2=${x2}")
+        }
+        if (delta == 0.0) {
+            println("Mamy jedno rowziązanie:")
+            println("x0=${x0}")
+        }
+        if (delta < 0)
+            println("Równanie nie posiada rozwiązań w zbiorze liczb rzeczywistych")
     }
 
     fun deltaInfo() {
@@ -41,5 +54,6 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
 
     init {
         delta = obliczDelte()
+        oblicz()
     }
 }
