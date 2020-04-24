@@ -21,8 +21,12 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
 
     fun obliczDwaRozwiazaniaZespolone(){
         val d = -delta
+
         x1 = -b/ (2 * a) + sqrt(d) / (2 * a)
         x2 = -b/ (2 * a) - sqrt(d) / (2 * a)
+
+        x1i = 0.0
+        x2i = 0.0
     }
 
     fun obliczJednoRozwiazanie() {
@@ -41,10 +45,6 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
         }
         if (delta < 0) {
             println("Równanie nie posiada rozwiązań w zbiorze liczb rzeczywistych")
-            x1=4.0
-            x2=2.0
-            x1i = 1.0
-            x2i = 2.0
             println("x1=${x1}+${x1i}i")
             println("x2=${x2}+${x2i}i")
         }
@@ -65,7 +65,7 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
         if (delta == 0.0)
             obliczJednoRozwiazanie()
         if (delta < 0)
-            return
+            obliczDwaRozwiazaniaZespolone()
     }
 
     init {
