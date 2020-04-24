@@ -7,6 +7,9 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
     var x1 = 0.0
     var x2 = 0.0
 
+    var x1i = 0.0
+    var x2i = 0.0
+
     fun obliczDelte(): Double {
         return b * b - 4 * a * c
     }
@@ -14,6 +17,12 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
     fun obliczDwaRozwiazania() {
         x1 = (-b + sqrt(delta)) / (2 * a)
         x2 = (-b - sqrt(delta)) / (2 * a)
+    }
+
+    fun obliczDwaRozwiazaniaZespolone(){
+        val d = -delta
+        x1 = -b/ (2 * a) + sqrt(d) / (2 * a)
+        x2 = -b/ (2 * a) - sqrt(d) / (2 * a)
     }
 
     fun obliczJednoRozwiazanie() {
@@ -30,8 +39,15 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
             println("Mamy jedno rowziązanie:")
             println("x0=${x0}")
         }
-        if (delta < 0)
+        if (delta < 0) {
             println("Równanie nie posiada rozwiązań w zbiorze liczb rzeczywistych")
+            x1=4.0
+            x2=2.0
+            x1i = 1.0
+            x2i = 2.0
+            println("x1=${x1}+${x1i}i")
+            println("x2=${x2}+${x2i}i")
+        }
     }
 
     fun deltaInfo() {

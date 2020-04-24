@@ -1,7 +1,8 @@
 fun main(){
     //5x^2+x+4
     val rownanieKwadratowe = RownanieKwadratowe(0.5,1.0,0.5)
-    val rownanie1 = RownanieKwadratowe(0.5,1.0,0.0)
+    val rownanie1 = RownanieKwadratowe(5.0,1.0,1.0)
+
 
     rownanieKwadratowe.deltaInfo()
     rownanieKwadratowe.wyswietlRozwiazania();
@@ -19,4 +20,9 @@ fun main(){
     //zał. że b=1
     //1=4*a^2
     //czyli a=1/2 lub a=-1/2
+    //zał. że b=2
+    //2^2=4*a^2
+    //4=4*a^2
+    //1=a^2
+    //a=1
 }
